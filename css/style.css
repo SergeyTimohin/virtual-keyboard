@@ -108,7 +108,7 @@ p {
   border-radius: 3px;
   background-color: rgb(31, 47, 47);
   color: #fff;
-  transition: color 0.5s, background-color 0.5s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .back-space,
@@ -132,5 +132,5 @@ p {
 .key_active {
   background-color: #fff;
   color:#000;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
