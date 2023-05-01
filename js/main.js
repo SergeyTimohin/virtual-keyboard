@@ -117,3 +117,50 @@ for(let i = 0; i < keyCode.length; i++) {
     createKey(keyCode[i], keysRusLower[i]);
   }  
 }
+
+let buttons = document.querySelectorAll('.key');
+
+buttons.forEach(element => {
+  if(element.dataset.keyCode == 'Backspace') {
+    element.classList.add('back-space');
+  }
+  if(element.dataset.keyCode == 'Tab') {
+    element.classList.add('tab');
+  }
+  if(element.dataset.keyCode == 'Tab') {
+    element.classList.add('tab');
+  }
+  if(element.dataset.keyCode == 'ShiftLeft') {
+    element.classList.add('shift');
+    element.classList.add('shift_left');
+  }
+  if(element.dataset.keyCode == 'ShiftRight') {
+    element.classList.add('shift');
+    element.classList.add('shift_right');
+  }
+  if(element.dataset.keyCode == 'ControlLeft') {
+    element.classList.add('control');
+    element.classList.add('control_left');
+  }
+  if(element.dataset.keyCode == 'ControlRight') {
+    element.classList.add('control');
+    element.classList.add('control_right');
+  }
+  if(element.dataset.keyCode == 'AltLeft') {
+    element.classList.add('alt');
+    element.classList.add('alt_left');
+  }
+  if(element.dataset.keyCode == 'AltRight') {
+    element.classList.add('alt');
+    element.classList.add('alt_right');
+  }
+  if(element.dataset.keyCode == 'CapsLock') {
+    element.classList.add('caps');
+  }
+  if(element.dataset.keyCode == 'Enter') {
+    element.classList.add('enter');
+  } 
+  if(element.dataset.keyCode == 'Space') {
+    element.classList.add('space-button');    
+  }
+});

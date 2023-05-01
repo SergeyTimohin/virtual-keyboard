@@ -75,10 +75,7 @@ p {
   border-radius: 5px;
 }
 
-.key-box {
-  /* width: 40px;
-  height: 40px;
-  border: 1px solid #000; */
+.key-box {  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,4 +93,22 @@ p {
   border-radius: 3px;
   background-color: rgb(31, 47, 47);
   color: #fff;
+}
+
+.back-space,
+.caps,
+.shift_left {
+  width: 100px;
+}
+
+.tab {
+  width: 50px;
+}
+
+.enter {
+  width: 85px;
+}
+
+.space-button {
+  width: 327px;  
 }
