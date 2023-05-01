@@ -72,3 +72,48 @@ const keysEngShift = [
 const lang  = ['eng', 'rus'];
 
 let currentLang = lang[0];
+
+let createKey = function(code, value) {
+  let keyBox = document.createElement('div');
+  keyBox.classList.add('key-box');
+  let key = document.createElement('div');
+  key.classList.add('key');
+  key.setAttribute('data-key-code',`${code}`);  
+  key.innerText = `${value}`; 
+
+  if (key.dataset.keyCode == 'Delete') {
+    key.innerText = 'DEL';
+  }
+  if (key.dataset.keyCode == 'Delete') {
+    key.innerText = 'DEL';
+  }
+  if (key.dataset.keyCode == 'ControlLeft' || key.dataset.keyCode == 'ControlRight' ) {
+    key.innerText = 'Ctrl';
+  }
+  if (key.dataset.keyCode == 'MetaLeft') {
+    key.innerText = 'Win';
+  }
+  if (key.dataset.keyCode == 'ArrowUp') {    
+    key.innerHTML = '<i class="fa fa-caret-up" aria-hidden="true"></i>';
+  }
+  if (key.dataset.keyCode == 'ArrowLeft') {    
+    key.innerHTML = '<i class="fa fa-caret-up fa-rotate-270" aria-hidden="true"></i>';
+  }
+  if (key.dataset.keyCode == 'ArrowDown') {    
+    key.innerHTML = '<i class="fa fa-caret-up fa-rotate-180" aria-hidden="true"></i>';
+  }
+  if (key.dataset.keyCode == 'ArrowRight') {    
+    key.innerHTML = '<i class="fa fa-caret-up fa-rotate-90" aria-hidden="true"></i>';
+  }
+  keyBox.append(key);
+  keyBoard.append(keyBox);
+};
+
+
+for(let i = 0; i < keyCode.length; i++) {
+    if (currentLang == 'eng') {
+    createKey(keyCode[i], keysEngLower[i]);
+  }else{
+    createKey(keyCode[i], keysRusLower[i]);
+  }  
+}

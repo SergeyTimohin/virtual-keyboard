@@ -74,3 +74,26 @@ p {
   background-color: rgb(17, 17, 17);
   border-radius: 5px;
 }
+
+.key-box {
+  /* width: 40px;
+  height: 40px;
+  border: 1px solid #000; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  text-transform: capitalize;
+  padding-top: 3px;
+  border-radius: 3px;
+  background-color: rgb(31, 47, 47);
+  color: #fff;
+}
