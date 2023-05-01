@@ -5,6 +5,11 @@ const container = document.createElement('div');
 container.classList.add('container');
 body.append(container);
 
+const title = document.createElement('h1');
+title.classList.add('title');
+title.innerText = 'RSS Virtual Keyboard';
+container.append(title);
+
 const outputBlock = document.createElement('textarea');
 outputBlock.classList.add('output-block');
 container.append(outputBlock);
@@ -12,6 +17,23 @@ container.append(outputBlock);
 const keyBoard = document.createElement('div');
 keyBoard.classList.add('keyboard');
 container.append(keyBoard);
+
+const infoBox = document.createElement('div');
+infoBox.classList.add('info');
+
+const infoTextfirst = document.createElement('p');
+infoTextfirst.classList.add('info-text');
+infoTextfirst.innerText = 'Клавиатура создана в операционной системе Windows';
+const infoTextSecond = document.createElement('p');
+infoTextSecond.classList.add('info-text');
+infoTextSecond.innerText = 'Для переключения языка комбинация: левыe shift + alt' ;
+
+infoBox.append(infoTextfirst);
+infoBox.append(infoTextSecond);
+
+container.append(infoBox);
+
+
 
 const keyCode = [
   'Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace',
@@ -163,4 +185,33 @@ buttons.forEach(element => {
   if(element.dataset.keyCode == 'Space') {
     element.classList.add('space-button');    
   }
+});
+
+let outputText = '';
+document.addEventListener('keydown', (e) => {
+  e.preventDefault();  
+  let keycode = e.code;  
+  outputText += e.key;
+  document.querySelector('.output-block').innerText = outputText;  
+  document.querySelector(`[data-key-code="${keycode}"]`).classList.add('key_active');
+});
+
+document.addEventListener('keyup', (e) => {
+  e.preventDefault();
+  let keycode = e.code;
+  document.querySelector(`[data-key-code="${keycode}"]`).classList.remove('key_active');
+});
+
+document.addEventListener('mousedown', (e) => {
+  e.preventDefault();  
+  let keycode = e.target.dataset.keyCode;  
+  outputText += e.target.innerText;
+  document.querySelector('.output-block').innerText = outputText; 
+  document.querySelector(`[data-key-code="${keycode}"]`).classList.add('key_active');
+});
+
+document.addEventListener('mouseup', (e) => {
+  e.preventDefault();
+  let keycode = e.target.dataset.keyCode;
+  document.querySelector(`[data-key-code="${keycode}"]`).classList.remove('key_active');
 });
